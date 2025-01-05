@@ -1,0 +1,29 @@
+<h1>Editar Estágio</h1>
+
+<%= form_with model: @stage do |form| %>
+  <% if @stage.errors.any? %>
+    <div>
+      <h2>Erros:</h2>
+      <ul>
+        <% @stage.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+  <div>
+    <%= form.label :position %>
+    <%= form.number_field :position %>
+  </div>
+  <div>
+    <%= form.label :active %>
+    <%= form.check_box :active %>
+  </div>
+
+  <%= form.submit 'Salvar' %>
+<% end %>

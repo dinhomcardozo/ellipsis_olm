@@ -1,0 +1,2 @@
+class TaxRegime < ApplicationRecord
+end

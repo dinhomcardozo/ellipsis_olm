@@ -1,0 +1,40 @@
+<h1>Contratos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Oportunidade</th>
+      <th>Produtos</th>
+      <th>Data do Contrato</th>
+      <th>Data de Término</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contracts.each do |contract| %>
+      <tr>
+        <td><%= contract.id %></td>
+        <td><%= contract.opportunity.id %></td>
+        <td>
+          <% if contract.products.present? %>
+            <ul>
+              <% contract.products.each do |product_id| %>
+                <li>Produto ID: <%= product_id %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            Nenhum produto associado
+          <% end %>
+        </td>
+        <td><%= contract.contract_date %></td>
+        <td><%= contract.contract_end_date %></td>
+        <td>
+          <%= link_to 'Ver', contract_path(contract) %>
+          <%= link_to 'Editar', edit_contract_path(contract) %>
+          <%= link_to 'Excluir', contract_path(contract), method: :delete, data: { confirm: 'Tem certeza?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,12 @@
+PRÓXIMAS ETAPAS:
+
+Autenticação: Certifique-se de que o login esteja implementado corretamente para cada tipo de usuário (SystemAdmin e Client/User).
+# Aqui: https://docs.google.com/document/d/1Iz8QD0OacoYV5_ZTOR18ilswA7AZwMd_lL9I4H3aQxg/edit?tab=t.0#heading=h.dvd9dkgrck0u
+
+Redirecionamento dinâmico: O redirecionamento da página inicial (root) pode ser baseado no tipo de usuário que está logado.
+
+Controle de acesso: Utilize as autenticações e before_action para restringir o acesso aos painéis de administrador e cliente.
+
+Subir todas as tabelas no banco de dados / Definir um banco de dados mais adequado.
+
+Criar as p

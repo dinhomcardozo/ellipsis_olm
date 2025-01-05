@@ -1,0 +1,60 @@
+<!-- app/views/shared/_sidebar.html.erb -->
+<nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+  <div class="position-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <%= link_to 'Home', home_index_path, class: 'nav-link active' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Grupos', '#', class: 'nav-link' %>
+        <ul class="nav flex-column ms-3">
+          <li class="nav-item">
+            <%= link_to 'Ver todos os Grupos', groups_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Buscar Grupos e Empresas', search_groups_companies_path, class: 'nav-link' %>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Produtos e Serviços', '#', class: 'nav-link' %>
+        <ul class="nav flex-column ms-3">
+          <li class="nav-item">
+            <%= link_to 'Cadastrar Produtos e Serviços', new_clients_product_path, class: 'nav-link' %>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Relatórios', '#', class: 'nav-link' %>
+        <ul class="nav flex-column ms-3">
+          <li class="nav-item">
+            <%= link_to 'Relatório de Empresas', reports_companies_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Relatório de Oportunidades', reports_opportunities_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Relatório de Vendas', reports_sales_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Relatórios por Estágios', reports_by_stage_path, class: 'nav-link' %>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Configurações', '#', class: 'nav-link' %>
+        <ul class="nav flex-column ms-3">
+          <li class="nav-item">
+            <%= link_to 'Conta', account_settings_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Permissões', permissions_path, class: 'nav-link' %> <!-- Exiba se for admin -->
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Meu plano', plan_settings_path, class: 'nav-link' %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,20 @@
+<h1>Client Dashboard</h1>
+
+<!---- MENU ---->
+
+<!-- app/views/clients/dashboard.html.erb -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- Menu Lateral -->
+    <%= render 'shared/sidebar' %>
+
+    <!-- Conteúdo principal -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+      <h1>Seu OLM</h1>
+        <p>Bem-vindo ao OLM, <%= @client.name %>! email <%= @client.email %></p>
+      <!-- Aqui você pode colocar o conteúdo da dashboard do cliente -->
+    </main>
+  </div>
+</div>
+
+<!---- FIM MENU ---->

@@ -1,0 +1,29 @@
+<h1>Estágios de Oportunidades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descrição</th>
+      <th>Posição</th>
+      <th>Ativo</th>
+      <% if current_user.system_admin? %>
+        <th>Ações</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stages.each do |stage| %>
+      <tr>
+        <td><%= stage.description %></td>
+        <td><%= stage.position %></td>
+        <td><%= stage.active ? 'Sim' : 'Não' %></td>
+        <% if current_user.system_admin? %>
+          <td>
+            <%= link_to 'Editar', edit_stage_path(stage) %> |
+            <%= link_to 'Excluir', stage_path(stage), method: :delete, data: { confirm: 'Tem certeza?' } %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

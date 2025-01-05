@@ -1,0 +1,33 @@
+<h1>Nova Oportunidade</h1>
+
+<%= form_with model: @opportunity, local: true do |form| %>
+  <% if @opportunity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@opportunity.errors.count, "erro") %> proibiu esta oportunidade de ser salva:</h2>
+      <ul>
+        <% @opportunity.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :contact_id %>
+    <%= form.collection_select :contact_id, @contacts, :id, :full_name, prompt: "Escolha um Contato" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stage_id %>
+    <%= form.collection_select :stage_id, @stages, :id, :description, prompt: "Escolha um Estágio" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clients_product_ids, "Produtos do Cliente" %>
+    <%= form.collection_check_boxes :clients_product_ids, @client_products, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Criar Oportunidade" %>
+  </div>
+<% end %>
